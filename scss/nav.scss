@@ -1,0 +1,108 @@
+// VAR FONTS
+$first-font: 'Viga', sans-serif;
+$second-font: 'Roboto', sans-serif;
+$third-font: 'Quicksand', sans-serif;
+$fouth-font: 'Oswald', sans-serif;
+
+// VAR COLORS
+$light-black: #282831;
+$light-blue: #0094FF;
+$light-grey: #777;
+$super-light-grey: rgba(250, 250, 250, 0.815);
+$white: #ffffff;
+
+// WHEN SCROLLS DOWN
+.affix {
+    background-color: $white;
+}
+
+// NAV BAR
+
+.nav {
+    width: 100%;
+    position: fixed;
+    transition: all 0.4s ease;
+    z-index: 10;
+
+    .nav-container {
+        margin: auto;
+        width: 65%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            list-style-type: none;
+            gap: 2.5rem;
+
+            li {
+                font-family: $fouth-font;
+
+                a {
+                    text-decoration: none;
+                    color: $light-grey;
+                }
+
+                a:hover {
+                    color: $light-black;
+                }
+            }
+        }
+    }
+}
+
+// MEDIA QUERY NAV TRIGGER
+
+@media screen and (max-width: 822px) {
+
+    .nav-container {
+        min-width: 90%;
+        position: relative;
+    }
+
+    // HAMBURGER 
+    .navTrigger {
+        position: absolute;
+        right: 0%;
+        bottom: 35%;
+        right: 17.5%;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        background-image: url(/images/menu-icon.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    } 
+
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .nav div.show_list {
+        height: 100%;
+        display: none;
+    }
+    
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        top: 0%;
+        right: 0%;
+        font-size: 2.5rem;
+        background-color: rgb(255, 255, 255);
+        /*same background color of navbar*/
+        background-position: center top;
+
+        li {
+            padding-top: 3.7rem;
+            width: 100%;
+        }
+    }
+}
